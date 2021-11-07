@@ -46,7 +46,8 @@
 
     <modules>
         <module>capa-adapter</module>
-        <module>capa-serialzer</module>
+        <module>capa-serializer</module>
+        <module>capa-foundation</module>
     </modules>
 
     <properties>
@@ -67,7 +68,13 @@
             <!-- sdk module -->
             <dependency>
                 <groupId>group.rxcloud</groupId>
-                <artifactId>capa-serialzer</artifactId>
+                <artifactId>capa-serializer</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!-- sdk module -->
+            <dependency>
+                <groupId>group.rxcloud</groupId>
+                <artifactId>capa-foundation</artifactId>
                 <version>${project.version}</version>
             </dependency>
 

@@ -7,14 +7,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-/**
- * @author Reckless Xu
- * @date 2021/11/8
- */
-public final class CtripAppPropertyUtils {
-    private static final Logger LOGGER = LoggerFactory.getLogger(CtripAppPropertyUtils.class);
+public final class CapaAppPropertyUtils {
 
-    private static Properties appProperties = new Properties();
+    private static final Logger LOGGER = LoggerFactory.getLogger(CapaAppPropertyUtils.class);
+
+    private static final Properties appProperties = new Properties();
 
     public static final String APP_PROPERTIES_CLASSPATH = "/META-INF/app.properties";
 
@@ -23,7 +20,7 @@ public final class CtripAppPropertyUtils {
     static {
         InputStream in = Thread.currentThread().getContextClassLoader().getResourceAsStream(APP_PROPERTIES_CLASSPATH);
         if (in == null) {
-            in = CtripAppPropertyUtils.class.getResourceAsStream(APP_PROPERTIES_CLASSPATH);
+            in = CapaAppPropertyUtils.class.getResourceAsStream(APP_PROPERTIES_CLASSPATH);
         }
         if (in == null) {
             LOGGER.error("ERROR: " + APP_PROPERTIES_CLASSPATH + " not found from classpath!");
@@ -43,6 +40,6 @@ public final class CtripAppPropertyUtils {
         return appProperties.getProperty(APP_ID_PROPERTY);
     }
 
-    private CtripAppPropertyUtils() {
+    private CapaAppPropertyUtils() {
     }
 }

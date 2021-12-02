@@ -11,6 +11,7 @@ import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import java.util.Arrays;
 import java.util.Enumeration;
 
 /**
@@ -40,6 +41,18 @@ public final class TripTraceIdGeneratePolicy {
     public static String generate() {
         String appId = getAppId();
         String ip = getIp();
+        if (ip != null && ip.contains(".")) {
+            String[] v = ip.split("\\.");
+            StringBuilder ipBuilder = new StringBuilder();
+            for (String s : v) {
+                String hex = Integer.toHexString(Integer.parseInt(s));
+                if (hex.length() == 1) {
+                    ipBuilder.append('0');
+                }
+                ipBuilder.append(hex);
+            }
+            ip = ipBuilder.toString();
+        }
         long second = System.currentTimeMillis();
         return appId + SEPARATOR + ip + SEPARATOR + second + SEPARATOR + NUMBER_FORMAT.format(Math.random() * FACTOR);
     }

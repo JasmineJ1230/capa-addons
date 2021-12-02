@@ -7,7 +7,7 @@
     <groupId>group.rxcloud</groupId>
     <artifactId>capa-addons</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.3-alpha-2</version>
+    <version>1.0.3.RELEASE</version>
 
     <name>capa-addons-parent</name>
     <description>Addons for Capa.</description>
@@ -80,18 +80,18 @@
                 <version>${project.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j-api.version}</version>
+            </dependency>
+
             <!-- unit test -->
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>${junit.version}</version>
                 <scope>test</scope>
-            </dependency>
-
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-api</artifactId>
-                <version>${slf4j-api.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

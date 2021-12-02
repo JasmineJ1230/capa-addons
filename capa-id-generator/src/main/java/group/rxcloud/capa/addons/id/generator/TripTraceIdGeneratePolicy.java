@@ -11,7 +11,6 @@ import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
-import java.util.Arrays;
 import java.util.Enumeration;
 
 /**
@@ -77,9 +76,9 @@ public final class TripTraceIdGeneratePolicy {
                 Enumeration<InetAddress> inetAddresses = networkInterface.getInetAddresses();
                 while (inetAddresses.hasMoreElements()) {
                     InetAddress address = inetAddresses.nextElement();
-                   if (address instanceof Inet4Address && !address.isLoopbackAddress()) {
-                       return address.getHostAddress();
-                   }
+                    if (address instanceof Inet4Address && !address.isLoopbackAddress()) {
+                        return address.getHostAddress();
+                    }
                 }
             }
         } catch (SocketException e) {
@@ -87,5 +86,4 @@ public final class TripTraceIdGeneratePolicy {
         }
         return UNKNOWN;
     }
-
 }

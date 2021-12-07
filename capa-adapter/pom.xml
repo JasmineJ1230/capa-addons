@@ -7,7 +7,7 @@
     <parent>
         <artifactId>capa-addons</artifactId>
         <groupId>group.rxcloud</groupId>
-        <version>1.0.3.RELEASE</version>
+        <version>1.0.5.RELEASE</version>
     </parent>
 
     <artifactId>capa-adapter</artifactId>
@@ -15,7 +15,7 @@
     <name>capa-adapter</name>
 
     <properties>
-        <reactor-core.version>3.3.11.RELEASE</reactor-core.version>
+        <reactor-core.version>3.3.22.RELEASE</reactor-core.version>
     </properties>
 
     <dependencies>
@@ -23,7 +23,6 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>31.0-jre</version>
         </dependency>
 
         <!-- reactor -->

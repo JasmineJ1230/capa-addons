@@ -7,7 +7,7 @@
     <groupId>group.rxcloud</groupId>
     <artifactId>capa-addons</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.3.RELEASE</version>
+    <version>1.0.5.RELEASE</version>
 
     <name>capa-addons-parent</name>
     <description>Addons for Capa.</description>
@@ -55,8 +55,9 @@
         <java.version>8</java.version>
         <file.encoding>UTF-8</file.encoding>
         <maven.version>3.8.1</maven.version>
-        <junit.version>4.13.1</junit.version>
+        <guava.version>31.0-jre</guava.version>
         <slf4j-api.version>1.7.32</slf4j-api.version>
+        <junit.version>4.13.1</junit.version>
     </properties>
 
     <dependencyManagement>
@@ -79,11 +80,24 @@
                 <artifactId>capa-foundation</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <!-- sdk module -->
+            <dependency>
+                <groupId>group.rxcloud</groupId>
+                <artifactId>capa-id-generator</artifactId>
+                <version>${project.version}</version>
+            </dependency>
 
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-api</artifactId>
                 <version>${slf4j-api.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
             </dependency>
 
             <!-- unit test -->

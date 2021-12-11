@@ -1,12 +1,12 @@
 package group.rxcloud.capa.addons.foundation;
 
-import group.rxcloud.capa.addons.foundation.trip.CapaAppPropertyUtils;
+import com.ctrip.framework.foundation.Foundation;
 
 public final class CapaFoundation {
 
     public static String getAppId(FoundationType foundationType) {
         if (foundationType == FoundationType.TRIP) {
-            return CapaAppPropertyUtils.getAppId();
+            return Foundation.app().getAppId();
         }
         return "";
     }

@@ -39,7 +39,7 @@ public class DefaultBuildProvider extends AbstractProvider implements BuildProvi
             logger.info("build.properties found from classpath:{}.", BUILD_PROPERTIES_CLASSPATH);
             initialize(in);
         } catch (Exception ex) {
-            logger.error("DefaultBuildProvider initialize error", ex);
+            logger.warn("DefaultBuildProvider initialize error", ex);
         }
     }
 
@@ -56,7 +56,7 @@ public class DefaultBuildProvider extends AbstractProvider implements BuildProvi
 
             initAppId();
         } catch (Exception ex) {
-            logger.error("DefaultBuildProvider initialize with inputstream error", ex);
+            logger.warn("DefaultBuildProvider initialize with inputstream error", ex);
         }
     }
 

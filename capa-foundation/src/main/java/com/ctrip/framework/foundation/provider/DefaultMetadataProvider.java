@@ -70,7 +70,7 @@ public class DefaultMetadataProvider extends AbstractProvider implements Metadat
         File file = new File(filename);
         try {
             if (!file.exists() || !file.canRead()) {
-                logger.error("fileName:{} not exist nor no read permission", filename);
+                logger.warn("fileName:{} not exist nor no read permission", filename);
                 return;
             }
 
@@ -78,7 +78,7 @@ public class DefaultMetadataProvider extends AbstractProvider implements Metadat
             FileInputStream fis = new FileInputStream(file);
             initialize(fis);
         } catch (IOException e) {
-            logger.error("DefaultMetadataProvider initialize metadata provider failed: ", e);
+            logger.warn("DefaultMetadataProvider initialize metadata provider failed: ", e);
         }
     }
 
@@ -92,7 +92,7 @@ public class DefaultMetadataProvider extends AbstractProvider implements Metadat
 
         String domain = (String) properties.get(METADATA_DOMAIN_KEY);
         if (Utils.isBlank(domain)) {
-            logger.error("/opt/settings/region.properties no {}kv", METADATA_DOMAIN_KEY);
+            logger.warn("/opt/settings/region.properties no {}kv", METADATA_DOMAIN_KEY);
             return;
         }
 
@@ -117,7 +117,7 @@ public class DefaultMetadataProvider extends AbstractProvider implements Metadat
         HttpResponse<ResponseWrapper<Map<String, String>>> httpResponse = HttpUtil.getInstance().doPost(request, type);
         ResponseWrapper<Map<String, String>> metadataResponse = httpResponse.getBody();
         if (!metadataResponse.isSuccessful()) {
-            logger.error("load metadata from remote failed:{}", metadataResponse.getMessage());
+            logger.warn("load metadata from remote failed:{}", metadataResponse.getMessage());
             return false;
         }
 

@@ -17,4 +17,11 @@ public final class CapaFoundation {
         }
         return "";
     }
+
+    public static String getNamespace(FoundationType foundationType) {
+        if (foundationType == FoundationType.TRIP) {
+            return Foundation.server().getNamespace();
+        }
+        return "";
+    }
 }

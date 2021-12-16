@@ -12,6 +12,9 @@ public final class CapaFoundation {
     }
 
     public static String getEnv(FoundationType foundationType) {
+        if (foundationType == FoundationType.TRIP) {
+            return Foundation.server().getEnv().getName();
+        }
         return "";
     }
 }

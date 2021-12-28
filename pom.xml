@@ -7,7 +7,7 @@
     <groupId>group.rxcloud</groupId>
     <artifactId>capa-addons</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.7.RELEASE</version>
+    <version>1.0.8.RELEASE</version>
 
     <name>capa-addons-parent</name>
     <description>Addons for Capa.</description>

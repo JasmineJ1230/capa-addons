@@ -1,7 +1,7 @@
 package com.ctrip.framework.foundation.spi.provider;
 
-import com.ctrip.framework.foundation.enums.Env;
-import com.ctrip.framework.foundation.enums.EnvFamily;
+import com.ctrip.framework.foundation.Env;
+import com.ctrip.framework.foundation.EnvFamily;
 
 import java.io.IOException;
 import java.io.InputStream;

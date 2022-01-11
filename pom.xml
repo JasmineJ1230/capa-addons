@@ -7,7 +7,7 @@
     <groupId>group.rxcloud</groupId>
     <artifactId>capa-addons</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.8.RELEASE</version>
+    <version>1.0.9.RELEASE</version>
 
     <name>capa-addons-parent</name>
     <description>Addons for Capa.</description>
@@ -49,6 +49,7 @@
         <module>capa-serializer</module>
         <module>capa-foundation</module>
         <module>capa-id-generator</module>
+        <module>capa-cat</module>
     </modules>
 
     <properties>
@@ -84,6 +85,12 @@
             <dependency>
                 <groupId>group.rxcloud</groupId>
                 <artifactId>capa-id-generator</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!-- sdk module -->
+            <dependency>
+                <groupId>group.rxcloud</groupId>
+                <artifactId>capa-cat</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
